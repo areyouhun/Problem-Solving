@@ -1,11 +1,4 @@
 -- 코드를 입력하세요
-with rental_available as (
-    select distinct car_id 
-    from car_rental_company_rental_history
-    where start_date <= '2022-11-30'
-        and end_date >= '2022-11-01'
-)
-
 select car.car_id,
         car.car_type,
         car.daily_fee * 30 * (1 - (dc.discount_rate / 100)) as fee
